@@ -37,8 +37,24 @@
 				</form>
 
 				<!-- Result -->
+
+				<div class="result" v-if="result">
+					<h2 class="result__name">{{ result.name }}</h2>
+					<img
+						v-bind:src="result.avatar_url"
+						:alt="result.name"
+						class="result__avatar"
+					/>
+					<p class="result__bio">{{ result.bio }}</p>
+					<br />
+					<a v-bind:href="result.html_url" target="_blank"
+						>Ir al Github</a
+					>
+				</div>
+				<p v-else>Waiting for search..</p>
+
 				<!-- Error -->
-				<div class="result__error"></div>
+				<div class="result__error" v-if="error">{{ error }}</div>
 			</article>
 		</div>
 		<script src="js/main.js"></script>
