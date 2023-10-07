@@ -12,7 +12,23 @@
 	<body>
 		<div id="app">
 			<!-- Favorites -->
-			<div class="favorites"></div>
+			<div class="favorites">
+				<transition-group name="list">
+					<div
+						v-for=" favorite in allFavorites"
+						class="favorite"
+						:key="favorite.id"
+					>
+						<a @click.prevent="showFavorites(favorite)" href="#">
+							<img
+								:src="favorite.avatar_url"
+								:alt="favorite.name"
+								class="favorite__avatar"
+							/>
+						</a>
+					</div>
+				</transition-group>
+			</div>
 
 			<!-- Content -->
 			<article class="content">
@@ -37,21 +53,35 @@
 				</form>
 
 				<!-- Result -->
-
-				<div class="result" v-if="result">
-					<h2 class="result__name">{{ result.name }}</h2>
-					<img
-						v-bind:src="result.avatar_url"
-						:alt="result.name"
-						class="result__avatar"
-					/>
-					<p class="result__bio">{{ result.bio }}</p>
-					<br />
-					<a v-bind:href="result.html_url" target="_blank"
-						>Ir al Github</a
-					>
-				</div>
-				<p v-else>Waiting for search..</p>
+				<Transition>
+					<div class="result" v-if="result">
+						<a
+							href="#"
+							v-if="!isFavorite"
+							class="result__toggle-favorite"
+							@click="addFavorite"
+							>Add favorite ⭐️</a
+						>
+						<a
+							href="#"
+							v-else
+							class="result__toggle-favorite"
+							@click="removeFavorite"
+							>Remove favorite ❌</a
+						>
+						<h2 class="result__name">{{ result.name }}</h2>
+						<img
+							v-bind:src="result.avatar_url"
+							:alt="result.name"
+							class="result__avatar"
+						/>
+						<p class="result__bio">{{ result.bio }}</p>
+						<br />
+						<a v-bind:href="result.html_url" target="_blank"
+							>Ir al Github</a
+						>
+					</div>
+				</Transition>
 
 				<!-- Error -->
 				<div class="result__error" v-if="error">{{ error }}</div>
