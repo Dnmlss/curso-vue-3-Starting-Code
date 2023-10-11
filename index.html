@@ -16,6 +16,7 @@
 				<transition-group name="list">
 					<div
 						v-for=" favorite in allFavorites"
+						:class="{'favorite--selected': checkFavorites(favorite.login)}"
 						class="favorite"
 						:key="favorite.id"
 					>

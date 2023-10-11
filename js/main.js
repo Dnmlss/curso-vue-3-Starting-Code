@@ -14,8 +14,9 @@ const app = Vue.createApp({
 	},
 	created() {
 		const savedFavorites = JSON.parse(
-			window.localStorage.getItem("favorites")
-		); // Obtenemos los favoritos del localStorage
+			window.localStorage.getItem("favorites") // Obtenemos los favoritos del localStorage
+		);
+
 		if (savedFavorites) {
 			const favorites = new Map(
 				savedFavorites.map((favorite) => [favorite.login, favorite])
@@ -23,10 +24,12 @@ const app = Vue.createApp({
 			this.favorites = favorites;
 		}
 	},
+
 	computed: {
 		isFavorite() {
 			return this.favorites.has(this.result.login);
 		},
+
 		allFavorites() {
 			return Array.from(this.favorites.values());
 		},
@@ -66,11 +69,13 @@ const app = Vue.createApp({
 				this.search = null; // Limpiamos el valor del input
 			}
 		},
+
 		addFavorite() {
 			this.result.lastRequestTime = Date.now();
 			this.favorites.set(this.result.login, this.result); // Añadimos el usuario a la lista de favoritos. primero su id, luego el objeto completo
 			this.updateFavorite(); // Actualizamos la lista de favoritos en el localStorage
 		},
+
 		removeFavorite() {
 			this.favorites.delete(this.result.login);
 			this.updateFavorite();
@@ -78,6 +83,10 @@ const app = Vue.createApp({
 
 		showFavorites(favorite) {
 			this.result = favorite;
+		},
+
+		checkFavorites(id) {
+			return this.result?.login === id;
 		},
 
 		updateFavorite() {
