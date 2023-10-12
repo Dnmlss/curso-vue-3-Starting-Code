@@ -36,8 +36,7 @@ app.component("app-profile", {
     />
     <p class="result__bio">{{ result.bio }}</p>
     <br />
-    <a v-bind:href="result.html_url" target="_blank"
-        >Ir al Github</a
-    >
+        <a v-bind:href="result.html_url" class="a-github" target="_blank"
+            >Ir al Github</a>
 </div>`,
 });

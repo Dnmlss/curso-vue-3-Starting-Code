@@ -13,7 +13,12 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: darkslateblue;
+	background: rgb(53, 97, 105);
+	background: linear-gradient(
+		0deg,
+		rgba(53, 97, 105, 1) 25%,
+		rgba(146, 202, 206, 1) 100%
+	);
 	font-size: 1.3rem;
 }
 
@@ -95,6 +100,17 @@ p {
 	color: goldenrod;
 }
 
+.a-github {
+	color: black;
+	transition: transform 0.5s ease-in-out;
+}
+
+.a-github:hover {
+	transform: scale(1.2) translateZ(1.5rem);
+	transition-duration: 150ms;
+	transition-delay: 150ms;
+}
+
 .result__error {
 	padding: 0.3rem;
 	background-color: tomato;
@@ -106,19 +122,32 @@ p {
 /* Favorites */
 .favorites {
 	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
+	top: 27px;
+	width: auto;
+	left: 27%;
 	display: flex;
+	justify-content: center;
+	background-color: #3b757f;
+	border-radius: 10px;
+	border: 2px solid black;
 }
 
 .favorite {
-	transition: transform 0.3s ease-out;
+	transition: transform 1s ease-in-out;
 }
 
 .favorite__avatar {
 	height: 5rem;
 	margin: 0.3rem;
+	border-radius: 5px;
+	border: 1.5px solid black;
+	transition: transform 0.5s ease-in-out;
+}
+
+.favorite__avatar:hover {
+	transform: scale(1.2) translateZ(1.5rem);
+	transition-duration: 300ms;
+	transition-delay: 300ms;
 }
 
 .favorite--selected {
