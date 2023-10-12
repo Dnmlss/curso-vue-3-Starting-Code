@@ -28,7 +28,8 @@ app.component("app-profile", {
         @click="addFavorite"
         >Add favorite ⭐️</a
     >
-    <h2 class="result__name">{{ result.name }}</h2>
+    <h2 v-if="isFavorite" class="result__name">{{ result.name }} ⭐️</h2>
+    <h2 v-else class="result__name">{{ result.name }} </h2>
     <img
         v-bind:src="result.avatar_url"
         :alt="result.name"

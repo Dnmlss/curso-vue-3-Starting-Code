@@ -24,29 +24,39 @@ body {
 
 /* Content */
 .content {
-	background-color: lightgrey;
+	background-color: #3b757f;
 	width: 768px;
 	max-width: 768px;
 	padding: 3rem;
-	box-shadow: 2px 2px 3px gray;
+	border: 1.5px solid #1a2c32;
 	border-radius: 1rem;
+	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 }
 
 .content__title {
 	margin: 1rem;
 	text-align: center;
+	font-style: italic;
 }
 
 /* Search */
 .search {
 	display: flex;
 	margin-bottom: 2.5rem;
+	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
+	-moz-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
+	box-shadow: 3px 1px 4px 0px rgba(120, 113, 113, 0.36);
 }
 
 .search__input {
 	flex: 1;
 	padding: 1rem;
 	font-size: 1rem;
+	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
+	-moz-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
+	box-shadow: 3px 1px 4px 0px rgba(120, 113, 113, 0.36);
 }
 
 p {
@@ -56,7 +66,7 @@ p {
 /* Result */
 .result {
 	position: relative;
-	background-color: purple;
+	background-color: rgba(255, 68, 0, 0.679);
 	border-radius: 0.3rem;
 	box-shadow: 2px 2px 3px gray;
 	color: white;
@@ -66,6 +76,11 @@ p {
 	grid-template-areas:
 		"name name"
 		"avatar bio";
+	border: 2px solid #1a2c32;
+	border-radius: 1rem;
+	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.73);
+	-moz-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.73);
+	box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.73);
 }
 
 .result__toggle-favorite {
@@ -81,28 +96,46 @@ p {
 .result__name {
 	grid-area: name;
 	margin: 0.4rem 0;
+	font-style: italic;
+	color: rgb(37, 44, 44);
 }
 
 .result__avatar {
 	grid-area: avatar;
 	max-width: 6rem;
+	cursor: pointer;
 	height: auto;
 	border-radius: 1rem;
+	border: 1.5px solid black;
+	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	transition: transform 0.5s ease-in-out;
+}
+
+.result__avatar:hover {
+	transform: scale(1.5) translateZ(1.5rem);
+	transition-duration: 150ms;
+	transition-delay: 150ms;
 }
 
 .result__bio {
 	grid-area: bio;
 	margin: 0;
+	font-style: italic;
+	color: rgb(207, 194, 194);
 }
 
 .result__blog {
 	grid-area: blog;
 	color: goldenrod;
+	font-style: italic;
 }
 
 .a-github {
 	color: black;
 	transition: transform 0.5s ease-in-out;
+	font-style: italic;
 }
 
 .a-github:hover {
@@ -122,32 +155,34 @@ p {
 /* Favorites */
 .favorites {
 	position: fixed;
-	top: 27px;
+	top: 15px;
 	width: auto;
-	left: 27%;
+	left: 25%;
 	display: flex;
-	justify-content: center;
 	background-color: #3b757f;
 	border-radius: 10px;
 	border: 2px solid black;
+	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
+	box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 }
 
 .favorite {
-	transition: transform 1s ease-in-out;
+	transition: transform 0.5s ease-in-out;
 }
 
 .favorite__avatar {
 	height: 5rem;
 	margin: 0.3rem;
-	border-radius: 5px;
+	border-radius: 8px;
 	border: 1.5px solid black;
 	transition: transform 0.5s ease-in-out;
 }
 
 .favorite__avatar:hover {
 	transform: scale(1.2) translateZ(1.5rem);
-	transition-duration: 300ms;
-	transition-delay: 300ms;
+	transition-duration: 150ms;
+	transition-delay: 5ms;
 }
 
 .favorite--selected {
