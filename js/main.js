@@ -97,6 +97,3 @@ const app = Vue.createApp({
 		},
 	},
 });
-
-// Montamos la instancia app para dar acceso a Vue a una pieza de nuestro DOM por medio de un selector, en este caso ID #app.
-const mountedApp = app.mount("#app");
