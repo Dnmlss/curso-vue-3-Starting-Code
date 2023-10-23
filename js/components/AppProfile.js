@@ -35,9 +35,13 @@ app.component("app-profile", {
         :alt="result.name"
         class="result__avatar"
     />
-    <p class="result__bio">{{ result.bio }}</p>
+    <p v-if="result.bio === null" class="result__bio">El usuario no tiene Bio 🙃</p>
+    <p v-else class="result__bio">{{ result.bio }}</p>
     <br />
         <a v-bind:href="result.html_url" class="a-github" target="_blank"
             >Ir al Github</a>
+    <div class="cant-repos">
+        <h4 class="public-repos">Repos: </h4> <br> <span> {{ result.public_repos }} </span>
+    </div>
 </div>`,
 });

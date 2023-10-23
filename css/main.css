@@ -19,7 +19,6 @@ body {
 		rgba(53, 97, 105, 1) 25%,
 		rgba(146, 202, 206, 1) 100%
 	);
-	font-size: 1.3rem;
 }
 
 /* Content */
@@ -61,6 +60,7 @@ body {
 
 p {
 	font-style: italic;
+	font-size: xx-large;
 }
 
 /* Result */
@@ -74,8 +74,9 @@ p {
 	display: grid;
 	gap: 1rem;
 	grid-template-areas:
-		"name name"
-		"avatar bio";
+		"avatar name"
+		"avatar bio"
+		"avatar blog";
 	border: 2px solid #1a2c32;
 	border-radius: 1rem;
 	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.73);
@@ -114,12 +115,13 @@ p {
 }
 
 .result__avatar:hover {
-	transform: scale(1.5) translateZ(1.5rem);
+	transform: scale(1.2) translateZ(1.2rem);
 	transition-duration: 150ms;
 	transition-delay: 150ms;
 }
 
 .result__bio {
+	font-size: 1.4rem;
 	grid-area: bio;
 	margin: 0;
 	font-style: italic;
@@ -134,14 +136,37 @@ p {
 
 .a-github {
 	color: black;
+	width: fit-content;
 	transition: transform 0.5s ease-in-out;
 	font-style: italic;
+	font-size: 1.2rem;
 }
 
 .a-github:hover {
 	transform: scale(1.2) translateZ(1.5rem);
 	transition-duration: 150ms;
 	transition-delay: 150ms;
+}
+
+.cant-repos {
+	display: flex;
+	width: 25%;
+	justify-content: space-evenly;
+	justify-self: end;
+	border-radius: 10px;
+	background-color: rgb(5 5 6 / 28%);
+}
+
+h4 {
+	font-style: italic;
+	color: rgb(2, 2, 2);
+}
+
+span {
+	margin-top: 21px;
+	color: rgb(0, 0, 0);
+	border-radius: 5px;
+	font-family: fangsong;
 }
 
 .result__error {
