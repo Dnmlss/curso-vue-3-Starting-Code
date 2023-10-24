@@ -19,7 +19,7 @@ body {
 		rgba(53, 97, 105, 1) 25%,
 		rgba(146, 202, 206, 1) 100%
 	);
-	background-image: url("/image/anteojos.jpeg");
+	background-image: url("/image/psycho-code.jpeg");
 	background-size: cover;
 	filter: drop-shadow(0 0 0.75rem black);
 }
@@ -48,18 +48,29 @@ body {
 .search {
 	display: flex;
 	margin-bottom: 2.5rem;
-	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
-	-moz-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
-	box-shadow: 3px 1px 4px 0px rgba(120, 113, 113, 0.36);
 }
 
 .search__input {
 	flex: 1;
 	padding: 1rem;
 	font-size: 1rem;
+	border-radius: 40px;
 	-webkit-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
 	-moz-box-shadow: 3px 1px 4px 0px rgba(0, 0, 0, 0.36);
 	box-shadow: 3px 1px 4px 0px rgba(120, 113, 113, 0.36);
+}
+
+.search__submit {
+	background-color: #497382f5;
+	border: none;
+	border-radius: 15px;
+	cursor: pointer;
+}
+
+.search__submit:hover {
+	background-color: #ce56b6f5;
+	transform: scale(1.1) translateZ(1.9rem);
+	transition: transform 0s ease-in-out;
 }
 
 p {
@@ -154,7 +165,6 @@ p {
 
 .cant-repos {
 	display: flex;
-	width: 25%;
 	justify-content: center;
 	justify-self: end;
 	border-radius: 10px;
@@ -163,13 +173,13 @@ p {
 
 h4 {
 	font-style: italic;
-	color: rgb(2, 2, 2);
+	color: rgb(198 115 171);
 }
 
 span {
 	margin-top: 21px;
 	margin-left: 6px;
-	color: rgb(0, 0, 0);
+	color: rgb(15 191 52);
 	border-radius: 5px;
 	font-family: fangsong;
 }
@@ -185,7 +195,9 @@ span {
 /* Favorites */
 .favorites {
 	position: fixed;
-	top: 15px;
+	top: 40px;
+	left: 50%;
+	transform: translateX(-50%);
 	display: flex;
 	justify-content: center;
 	background-color: rgb(0 0 0 / 63%);
@@ -197,7 +209,7 @@ span {
 }
 
 .favorite {
-	transition: transform 0.5s ease-in-out;
+	transition: transform 0.1s ease;
 }
 
 .favorite__avatar {
@@ -205,13 +217,11 @@ span {
 	margin: 0.3rem;
 	border-radius: 50px;
 	border: 1.5px solid black;
-	transition: transform 0.5s ease-in-out;
+	transition: transform 0.1s ease;
 }
 
 .favorite__avatar:hover {
 	transform: scale(1.2) translateZ(1.5rem);
-	transition-duration: 150ms;
-	transition-delay: 5ms;
 }
 
 .favorite--selected {

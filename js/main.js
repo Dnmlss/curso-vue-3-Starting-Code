@@ -2,13 +2,13 @@ const API = "https://api.github.com/users/";
 
 const requestMaxTimeMs = 3000;
 
-// Utilizamos el metodo createApp para crear una instancia de Vue
+// Utilizamos el método createApp para crear una instancia de Vue
 const app = Vue.createApp({
 	data() {
 		return {
 			search: null, // Creamos una variable search para almacenar el valor del input
-			result: null, // Creamos una variable result para almacenar el resultado de la peticion
-			error: null, // Creamos una variable error para almacenar el error de la peticion
+			result: null, // Creamos una variable result para almacenar el resultado de la petición
+			error: null, // Creamos una variable error para almacenar el error de la petición
 			favorites: new Map(), // Creamos una variable favorites para almacenar los usuarios favoritos
 		};
 	},
@@ -50,16 +50,16 @@ const app = Vue.createApp({
 					}
 				}
 				return false;
-			})(); // IIFE
+			})(); // "IIFE"
 
 			if (!!foundInFavorites && !shouldRequestAgain) {
 				console.log("Found and we use the cached version");
 				return (this.result = foundInFavorites);
-			} // Si el usuario esta en favoritos, lo mostramos y salimos de la funcion
+			} // Si el usuario esta en favoritos, lo mostramos y salimos de la función
 
 			try {
 				console.log("Not found or cached version is too old");
-				const response = await fetch(API + this.search); // Hacemos la peticion a la API de github con el valor de busqueda
+				const response = await fetch(API + this.search); // Hacemos la petición a la API de github con el valor de búsqueda
 				if (!response.ok) throw new Error("User Not Found"); // Si la respuesta no es correcta lanzamos un error
 				const data = await response.json(); // Convertimos la respuesta en un objeto JSON
 				console.log(data);

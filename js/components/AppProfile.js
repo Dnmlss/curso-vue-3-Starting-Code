@@ -41,7 +41,7 @@ app.component("app-profile", {
         <a v-bind:href="result.html_url" class="a-github" target="_blank"
             >Ir al Github</a>
     <div class="cant-repos">
-        <h4 class="public-repos">Repos: </h4>
+        <h4 class="public-repos">Public Repos: </h4>
         <span> {{ result.public_repos }} </span>
     </div>
 </div>`,

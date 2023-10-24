@@ -12,5 +12,6 @@ yarn-error.log
 # Ignorar apuntes
 apuntes.md
 README.md
+.vscode/
 
 # End of https://www.toptal.com/developers/gitignore/api/vuejs
