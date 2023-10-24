@@ -43,9 +43,11 @@ const app = Vue.createApp({
 
 			const shouldRequestAgain = (() => {
 				if (!!foundInFavorites) {
-					const { lastRequestTime } = foundInFavorites;
-					const now = Date.now();
-					return now - lastRequestTime > requestMaxTimeMs;
+					if (foundInFavorites.lastRequestTime) {
+						const { lastRequestTime } = foundInFavorites;
+						const now = Date.now();
+						return now - lastRequestTime > requestMaxTimeMs;
+					}
 				}
 				return false;
 			})(); // IIFE
@@ -57,13 +59,16 @@ const app = Vue.createApp({
 
 			try {
 				console.log("Not found or cached version is too old");
-				const response = await fetch(API + this.search); // Hacemos la peticion a la API de github
+				const response = await fetch(API + this.search); // Hacemos la peticion a la API de github con el valor de busqueda
 				if (!response.ok) throw new Error("User Not Found"); // Si la respuesta no es correcta lanzamos un error
 				const data = await response.json(); // Convertimos la respuesta en un objeto JSON
 				console.log(data);
 				this.result = data;
-				foundInFavorites.lastRequestTime = Date.now();
+				if (foundInFavorites) {
+					foundInFavorites.lastRequestTime = Date.now(); // Actualiza la propiedad 'lastRequestTime' de foundInFavorites con el tiempo actual.
+				}
 			} catch (error) {
+				console.error(error);
 				this.error = error; // Si hay un error lo almacenamos en la variable error
 			} finally {
 				this.search = null; // Limpiamos el valor del input

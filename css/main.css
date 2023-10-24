@@ -19,15 +19,18 @@ body {
 		rgba(53, 97, 105, 1) 25%,
 		rgba(146, 202, 206, 1) 100%
 	);
+	background-image: url("/image/anteojos.jpeg");
+	background-size: cover;
+	filter: drop-shadow(0 0 0.75rem black);
 }
 
 /* Content */
 .content {
-	background-color: #3b757f;
+	background-color: rgb(0 0 0 / 63%);
 	width: 768px;
 	max-width: 768px;
 	padding: 3rem;
-	border: 1.5px solid #1a2c32;
+	border: 1px solid #202031;
 	border-radius: 1rem;
 	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
@@ -36,6 +39,7 @@ body {
 
 .content__title {
 	margin: 1rem;
+	color: lightseagreen;
 	text-align: center;
 	font-style: italic;
 }
@@ -66,7 +70,7 @@ p {
 /* Result */
 .result {
 	position: relative;
-	background-color: rgba(255, 68, 0, 0.679);
+	background-color: rgb(31 37 39 / 34%);
 	border-radius: 0.3rem;
 	box-shadow: 2px 2px 3px gray;
 	color: white;
@@ -98,7 +102,7 @@ p {
 	grid-area: name;
 	margin: 0.4rem 0;
 	font-style: italic;
-	color: rgb(37, 44, 44);
+	color: rgb(46 160 193 / 82%);
 }
 
 .result__avatar {
@@ -106,7 +110,7 @@ p {
 	max-width: 6rem;
 	cursor: pointer;
 	height: auto;
-	border-radius: 1rem;
+	border-radius: 50px;
 	border: 1.5px solid black;
 	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
@@ -135,7 +139,7 @@ p {
 }
 
 .a-github {
-	color: black;
+	color: #45b6c3b8;
 	width: fit-content;
 	transition: transform 0.5s ease-in-out;
 	font-style: italic;
@@ -151,10 +155,10 @@ p {
 .cant-repos {
 	display: flex;
 	width: 25%;
-	justify-content: space-evenly;
+	justify-content: center;
 	justify-self: end;
 	border-radius: 10px;
-	background-color: rgb(5 5 6 / 28%);
+	background-color: rgb(5 5 6 / 0.11);
 }
 
 h4 {
@@ -164,6 +168,7 @@ h4 {
 
 span {
 	margin-top: 21px;
+	margin-left: 6px;
 	color: rgb(0, 0, 0);
 	border-radius: 5px;
 	font-family: fangsong;
@@ -183,9 +188,9 @@ span {
 	top: 15px;
 	display: flex;
 	justify-content: center;
-	background-color: #3b757f;
-	border-radius: 10px;
-	border: 2px solid black;
+	background-color: rgb(0 0 0 / 63%);
+	border-radius: 50px;
+	border: 1px solid #202031;
 	-webkit-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 	-moz-box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
 	box-shadow: 8px 10px 9px 0px rgba(0, 0, 0, 0.73);
@@ -198,7 +203,7 @@ span {
 .favorite__avatar {
 	height: 5rem;
 	margin: 0.3rem;
-	border-radius: 8px;
+	border-radius: 50px;
 	border: 1.5px solid black;
 	transition: transform 0.5s ease-in-out;
 }
